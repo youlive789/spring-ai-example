@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.chatbot.model.entity.Post;
 
 @Repository
-interface PostRepository extends CrudRepository<Post, Long> {
-    
+public interface PostRepository extends CrudRepository<Post, Long> {
+    Post findFirstByUserIdOrderByIdDesc(Long userId);
 }
