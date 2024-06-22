@@ -15,3 +15,7 @@
 - Spring AI SQL Agent with 'Function Calling'
 - Langchain4j SQL Agent with '@Tool'
 - Custom Chat Client Implementation
+
+
+### How to create reAct Agent?
+https://github.com/QwenLM/Qwen/blob/main/examples/react_prompt.md

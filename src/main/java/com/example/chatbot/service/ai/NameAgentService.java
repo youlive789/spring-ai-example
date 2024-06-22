@@ -10,32 +10,16 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class NameAgentService {
-    @Value("classpath:/function.st")
-    private Resource systemPrompt;
-
-    @Value("classpath:/question.st")
-    private Resource userPrompt;
+    @Value("classpath:/react.st")
+    private Resource prompt;
 
     private final ChatClient chatClient;
 
     public String askName(String message) {
-        final String function = chatClient.prompt()
-            .user(userSpec -> userSpec
-                .text(systemPrompt)
-                .param("question", message)
-            )
-            .call()
-            .content();
-        
-        if (!"getName".equals(function)) {
-            return function;
-        }
-
         return chatClient.prompt()
             .user(userSpec -> userSpec
-                .text(userPrompt)
-                .param("context", "name: " + getName())
-                .param("question", message)
+                .text(prompt)
+                .param("query", message)
             )
             .call()
             .content();
