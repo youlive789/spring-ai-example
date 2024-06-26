@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class User {
+public class Writer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
