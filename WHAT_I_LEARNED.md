@@ -4,7 +4,7 @@
 2. Ollama
  - Dockerize된 LLM 서빙 툴
  - run
-    - docker run -d -v $PWD/data/models:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+    - docker run --gpus=all -d -v $PWD/data/models:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
     - docker exec -it ollama ollama run gemma:2b
 3. local AI
  - 로컬에서 AI 테스트를 위한 서빙 툴

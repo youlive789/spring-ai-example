@@ -15,7 +15,6 @@ import com.example.chatbot.service.ai.WriterAgentService;
 @RestController
 @RequiredArgsConstructor
 public class ChatController {
-    
     private final ChatClient chatClient;
     private final NameAgentService nameAgentService;
     private final WriterAgentService writerAgentService;
@@ -35,5 +34,4 @@ public class ChatController {
     public String writer(@RequestParam String message) {
         return writerAgentService.askLatestPostOfWriter(message);
     }
-    
 }
